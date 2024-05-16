@@ -16,7 +16,7 @@ This project adheres to a rigorous documentation process, beginning with the Sof
 ### 2. Navigate to the project directory:
 `cd university-department-info-system`
 ### 3. Run the application:
-python main.py
+`python main.py`
 
 Enter:
 Username: purvi
