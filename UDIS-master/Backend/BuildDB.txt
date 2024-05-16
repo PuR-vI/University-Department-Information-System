@@ -1,0 +1,59 @@
+CREATE TABLE student (roll text UNIQUE NOT NULL, student_name text NOT NULL, address text NOT NULL, course text NOT NULL, joining text NOT NULL);
+CREATE TABLE courses_taken (roll text NOT NULL, sub_code text NOT NULL, grade text NOT NULL, sem_taken text NOT NULL);
+CREATE TABLE all_courses (sub_code text UNIQUE NOT NULL, course_name text NOT NULL, prof_name text NOT NULL, credits int NOT NULL);
+CREATE TABLE projects (organisation text NOT NULL UNIQUE, incharge text NOT NULL, duration text NOT NULL, status text DEFAULT 'Ongoing' NOT NULL, name text UNIQUE NOT NULL);
+CREATE TABLE publications (prof_name text NOT NULL, pub_name text UNIQUE NOT NULL, date text NOT NULL);
+CREATE TABLE inventory (item_name text NOT NULL, location text NOT NULL, quantity int NOT NULL, type text NOT NULL, price int NOT NULL);
+CREATE TABLE transactions (organisation text NOT NULL, amount int NOT NULL, date text NOT NULL, purpose text NOT NULL);
+CREATE TABLE total (amount int NOT NULL);
+CREATE TABLE authentication (userid text NOT NULL, password NOT NULL);
+INSERT INTO authentication VALUES ("admin","password");
+INSERT INTO total VALUES (1000000);
+
+INSERT INTO student VALUES ("121CS0142", "Purvi Baranwal", "Birgunj
+Nepal", "B. Tech.", "2021");
+INSERT INTO student VALUES ("121CS0143", "Raj Singh", "
+Karnataka
+India", "B. Tech.", "2021");
+INSERT INTO student VALUES ("119CS0145", "Rajas Bhatt", "Jalandhar
+Punjab
+India", "M. Tech.", "2019");
+
+INSERT INTO all_courses VALUES ("CS31003", "Compilers", "Partha Pratim Das", 3);
+INSERT INTO all_courses VALUES ("CS31005", "Algorithms II", "Abhijit Das", 4);
+INSERT INTO all_courses VALUES ("CS21004", "FLAT", "Abhijit Das", 4);
+INSERT INTO all_courses VALUES ("CS21002", "SCLD", "Chittaranjan Mandal", 4);
+INSERT INTO all_courses VALUES ("CS20006", "Software Engineering", "Partha Pratim Das", 3);
+INSERT INTO all_courses VALUES ("CS21003", "Algorithms I", "Pawan Goyal", 4);
+INSERT INTO all_courses VALUES ("CS21001", "Discrete Structures", "Aritra Hazra", 4);
+INSERT INTO all_courses VALUES ("CS10001", "PDS", "Sudeshna Sarkar", 3);
+
+INSERT INTO courses_taken VALUES ("19CS10045", "CS10001", "A", "AUT-2019"); 
+INSERT INTO courses_taken VALUES ("19CS10045", "CS21001", "f", "AUT-2019"); 
+INSERT INTO courses_taken VALUES ("19CS10045", "CS21003", "B", "AUT-2019");
+INSERT INTO courses_taken VALUES ("19CS10055", "CS10001", "A", "AUT-2019"); 
+INSERT INTO courses_taken VALUES ("19CS10055", "CS21001", "B", "AUT-2019"); 
+INSERT INTO courses_taken VALUES ("19CS10055", "CS21003", "C", "AUT-2019");
+INSERT INTO courses_taken VALUES ("19CS30037", "CS10001", "EX", "AUT-2019"); 
+INSERT INTO courses_taken VALUES ("19CS30037", "CS21001", "EX", "AUT-2019"); 
+INSERT INTO courses_taken VALUES ("19CS30037", "CS21003", "A", "AUT-2019");
+
+INSERT INTO courses_taken VALUES ("19CS10045", "CS21004", "A", "SPR-2020"); 
+INSERT INTO courses_taken VALUES ("19CS10045", "CS20006", "C", "SPR-2020"); 
+INSERT INTO courses_taken VALUES ("19CS10045", "CS21002", "P", "SPR-2020");
+INSERT INTO courses_taken VALUES ("19CS10045", "CS21001", "EX", "SPR-2020");
+
+INSERT INTO courses_taken VALUES ("19CS10055", "CS21004", "EX", "SPR-2020"); 
+INSERT INTO courses_taken VALUES ("19CS10055", "CS20006", "B", "SPR-2020"); 
+INSERT INTO courses_taken VALUES ("19CS10055", "CS21002", "A", "SPR-2020");
+INSERT INTO courses_taken VALUES ("19CS30037", "CS21004", "F", "SPR-2020"); 
+INSERT INTO courses_taken VALUES ("19CS30037", "CS20006", "C", "SPR-2020"); 
+INSERT INTO courses_taken VALUES ("19CS30037", "CS21002", "A", "SPR-2020");
+
+
+INSERT INTO transactions VALUES ("MHRD", 1000000, "25/03/2019", "Monthly budget");
+
+INSERT INTO publications VALUES ("C. Mandal", "Automatic Detection of Human Fall", "2007");
+
+INSERT INTO projects VALUES ("IMPRINT-II", "Sudip Misra", "2019-2020", "Completed", "Unified Software-Defined Architecture for Industrial Internet of Things");
+
