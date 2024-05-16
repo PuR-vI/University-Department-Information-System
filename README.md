@@ -18,13 +18,6 @@ This project adheres to a rigorous documentation process, beginning with the Sof
 ### 3. Run the application:
 `python main.py`
 
-Enter:
-Username: purvi
-Password: password
-
-
-   
-
 To use the application,simply run the `Main.py` file.
 The login username is 'purvi' and password is 'password'
 
